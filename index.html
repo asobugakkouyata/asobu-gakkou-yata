@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>遊ぶ楽校やた｜自然の中で、遊びながら育つ。</title>
+  <meta name="description" content="遊ぶ楽校やたは、北九州市門司区のフリースクールです。ワクワク ドキドキ、子ども時代を思いっきり子どもらしく。見学・体験受付中。">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Zen Maru Gothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      color: #4a4a4a;
+      line-height: 1.9;
+      background: #fffef8;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===========================
+       ヘッダー
+    =========================== */
+    .header {
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0 2px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-area img {
+      width: 48px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .logo-text .name {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #3d8b5e;
+      letter-spacing: 0.06em;
+      line-height: 1.3;
+    }
+
+    .logo-text .tagline {
+      display: block;
+      font-size: 0.7rem;
+      color: #7aaa8e;
+    }
+
+    .header-contact-btn {
+      background: #4a9d6e;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 50px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .header-contact-btn:hover { background: #3d8b5e; }
+
+    .header-nav { padding: 4px 0 8px; }
+
+    .header-nav ul {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .header-nav a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #5a7a6a;
+      padding: 4px 10px;
+      border-radius: 14px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .header-nav a:hover,
+    .header-nav a.active {
+      background: #e8f5ed;
+      color: #3d8b5e;
+    }
+
+    /* ===========================
+       ヒーロー（元デザイン背景 + 2カラムレイアウト）
+    =========================== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      /* 元Next.jsの空グラデーション: from-sky-400 via-sky-200 to-sky-100 */
+      background: linear-gradient(to bottom, #5dc9ef, #bfe9fb, #e3f6fd);
+    }
+
+    /* 空の装飾（雲・鳥・紙飛行機・葉）レイヤー */
+    .hero-sky-decor {
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    /* 2カラムレイアウト */
+    .hero-grid {
+      position: relative;
+      z-index: 10;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 40% 60%;
+      align-items: center;
+      padding: 50px 36px 0;
+      min-height: 460px;
+    }
+
+    /* 左カラム */
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-catchcopy {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #5a4a2a;
+      line-height: 1.6;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .hero-dots {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .hero-dots span {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .hero-dots .d-g { background: #92cd48; }
+    .hero-dots .d-y { background: #f0c040; }
+    .hero-dots .d-p { background: #e8a0b0; }
+
+    .hero-tree {
+      width: 280px;
+      margin: 0 auto 0 10px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero-tree img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 右カラム */
+    .hero-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .hero-right img {
+      width: 90%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 2rem;
+      box-shadow: 0 22px 50px -20px rgba(107,66,38,0.45);
+      ring: 4px solid white;
+      outline: 4px solid white;
+      display: block;
+    }
+
+    /* ボタン（芝生の上・中央） */
+    .hero-cta {
+      position: relative;
+      z-index: 20;
+      text-align: center;
+      padding: 0 20px 30px;
+      margin-top: -20px;
+    }
+
+    .hero-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: #5f9b28;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 16px 40px;
+      border-radius: 50px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-cta a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* 芝生（元デザインのGrassHill SVG） */
+    .hero-grass {
+      position: relative;
+      height: 140px;
+      line-height: 0;
+      margin-top: 8px;
+    }
+    .hero-grass svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ===========================
+       セクション共通
+    =========================== */
+    .sec { padding: 72px 20px 80px; }
+
+    .sec-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .sec-label {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 500;
+      color: #9aba9e;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .sec-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #3a6528;
+      margin-bottom: 18px;
+      letter-spacing: 0.06em;
+    }
+
+    .sec-desc {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 2.2;
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+
+    .bg-cream { background: linear-gradient(180deg, #fdfcf5, #faf8f0); }
+    .bg-green { background: #f3f9ef; }
+    .bg-white { background: #fffef8; }
+
+    /* 遊ぶ楽校やたについて（ポエム風） */
+    .about-poem {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 2.4;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #333;
+      letter-spacing: 0.06em;
+    }
+
+    /* ===========================
+       理念
+    =========================== */
+    .philosophy-cards {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+
+    .philosophy-card {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #92cd48;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 32px;
+      text-align: center;
+    }
+
+    .philosophy-card .num {
+      display: block;
+      color: #3a6528;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+
+    .philosophy-card p {
+      font-size: 1.53rem;
+      color: #333;
+      line-height: 1.8;
+      font-weight: 700;
+    }
+
+    .philosophy-message {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .philosophy-message p {
+      font-size: 0.92rem;
+      color: #4a6840;
+      line-height: 2.2;
+    }
+
+    .philosophy-message .em {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #3a6528;
+    }
+
+    /* ===========================
+       5つの特徴カード
+    =========================== */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      justify-items: center;
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 0;
+      text-align: center;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+    }
+
+    .feature-card .feature-photo {
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+    }
+
+    .feature-card .feature-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .feature-card .feature-body {
+      padding: 16px 14px 18px;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 22px rgba(0,0,0,0.1);
+    }
+
+    .feature-icon {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 1.5rem;
+    }
+
+    .fi-green  { background: #e0f2e5; }
+    .fi-blue   { background: #dff0fa; }
+    .fi-pink   { background: #fce4ec; }
+    .fi-yellow { background: #fef3d5; }
+    .fi-orange { background: #fde8d0; }
+
+    .feature-card h3 {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #3a6528;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    .feature-card p {
+      font-size: 0.74rem;
+      color: #777;
+      line-height: 1.7;
+    }
+
+    /* ===========================
+       活動内容
+    =========================== */
+    .day-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: left;
+    }
+
+    .day-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      overflow: hidden;
+    }
+
+    .day-card .day-photo {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .day-card .day-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .day-card .day-body {
+      padding: 20px 22px 24px;
+    }
+
+    .day-card .day-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #fff;
+      padding: 3px 14px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .day-mon { background: #5ba8d9; }
+    .day-tue { background: #e8a04a; }
+    .day-thu { background: #6db33f; }
+
+    .day-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #3a6528;
+      margin-bottom: 10px;
+    }
+
+    .day-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .day-card li {
+      font-size: 0.82rem;
+      color: #555;
+      padding: 3px 0;
+      padding-left: 1.2em;
+      position: relative;
+    }
+
+    .day-card li::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+      color: #4a9d6e;
+    }
+
+    .event-extra {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .event-mini {
+      background: #fff;
+      border-radius: 14px;
+      padding: 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      overflow: hidden;
+    }
+
+    .event-mini .event-photo {
+      width: 100%;
+      height: 140px;
+      overflow: hidden;
+    }
+
+    .event-mini .event-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .event-mini .event-body {
+      padding: 14px 16px 18px;
+    }
+
+    .event-mini .emoji { font-size: 1.6rem; margin-bottom: 6px; }
+
+    .event-mini h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #3a6528;
+      margin-bottom: 4px;
+    }
+
+    .event-mini p {
+      font-size: 0.72rem;
+      color: #777;
+    }
+
+    /* ===========================
+       利用案内
+    =========================== */
+    .guide-table {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 740px;
+      text-align: left;
+      border-collapse: collapse;
+    }
+
+    .guide-table tr { border-bottom: 1px solid #e8e4d8; }
+
+    .guide-table th {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #3a6528;
+      padding: 14px 16px;
+      width: 120px;
+      vertical-align: top;
+      white-space: nowrap;
+      background: #f8f6ee;
+    }
+
+    .guide-table td {
+      font-size: 0.84rem;
+      color: #555;
+      padding: 14px 16px;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .price-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .price-card .plan {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #3a6528;
+      margin-bottom: 4px;
+    }
+
+    .price-card .price {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #4a9d6e;
+    }
+
+    .price-card .note {
+      font-size: 0.7rem;
+      color: #999;
+      margin-top: 2px;
+    }
+
+    /* ===========================
+       スタッフ紹介
+    =========================== */
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .staff-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .staff-avatar {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 14px;
+    }
+
+    .staff-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .staff-card .staff-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #3a6528;
+      margin-bottom: 2px;
+    }
+
+    .staff-card .staff-role {
+      font-size: 0.72rem;
+      color: #4a9d6e;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .staff-card .staff-msg {
+      font-size: 0.76rem;
+      color: #666;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    /* ===========================
+       サポーター募集
+    =========================== */
+    .supporter-message {
+      max-width: 700px;
+      margin: 0 auto 36px;
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+
+    .supporter-message p {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 2;
+    }
+
+    .supporter-message .em {
+      font-weight: 700;
+      color: #3a6528;
+    }
+
+    .supporter-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .supporter-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 26px 18px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-top: 4px solid #8cc63f;
+    }
+
+    .supporter-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #3a6528;
+      margin-bottom: 10px;
+    }
+
+    .supporter-card .s-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #4a9d6e;
+      margin-bottom: 4px;
+    }
+
+    .supporter-card .s-note {
+      font-size: 0.72rem;
+      color: #999;
+    }
+
+    /* ===========================
+       よくある質問
+    =========================== */
+    .faq-list {
+      max-width: 740px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 16px 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #3a6528;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .faq-item summary::before {
+      content: "Q";
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: #4a9d6e;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .faq-item summary::after {
+      content: "＋";
+      margin-left: auto;
+      font-size: 1.1rem;
+      color: #aaa;
+    }
+
+    .faq-item[open] summary::after { content: "−"; }
+
+    .faq-answer {
+      padding: 0 20px 18px 58px;
+      font-size: 0.82rem;
+      color: #666;
+      line-height: 1.9;
+    }
+
+    /* ===========================
+       アクセス
+    =========================== */
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 740px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .access-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px 22px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .access-card .access-day {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #fff;
+      padding: 3px 14px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .access-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #3a6528;
+      margin-bottom: 6px;
+    }
+
+    .access-card p {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ===========================
+       お問い合わせ
+    =========================== */
+    .contact-bg {
+      background: linear-gradient(135deg, #e8f8f0, #fef9e0);
+    }
+
+    .contact-desc {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 2;
+      max-width: 500px;
+      margin: 0 auto 28px;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px 14px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .contact-card .c-icon { font-size: 1.8rem; margin-bottom: 8px; }
+
+    .contact-card .c-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #3a6528;
+      margin-bottom: 6px;
+    }
+
+    .contact-card .c-value {
+      font-size: 0.82rem;
+      color: #4a9d6e;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    /* ===========================
+       フッター
+    =========================== */
+    footer {
+      background: #3d6b2e;
+      color: #c8e0b8;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.78rem;
+    }
+
+    footer .footer-links { margin-bottom: 10px; }
+
+    footer .footer-links a {
+      color: #d4ecc4;
+      margin: 0 10px;
+      font-size: 0.76rem;
+    }
+
+    footer .footer-links a:hover { color: #fff; }
+
+    /* ===========================
+       レスポンシブ
+    =========================== */
+    @media (max-width: 960px) {
+      .day-grid { grid-template-columns: 1fr; }
+      .philosophy-cards { gap: 14px; }
+      .philosophy-card { width: 240px; height: 240px; padding: 28px 22px; }
+      .philosophy-card p { font-size: 0.88rem; }
+      .staff-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 700px) {
+      .header-inner { padding: 0 16px; }
+      .header-top { flex-wrap: wrap; gap: 6px; }
+      .header-contact-btn { font-size: 0.72rem; padding: 8px 16px; }
+      .header-nav ul { gap: 2px; }
+      .header-nav a { font-size: 0.7rem; padding: 3px 7px; }
+
+      .hero-grid { grid-template-columns: 1fr; padding: 36px 20px 0; min-height: auto; }
+      .hero-left { align-items: center; text-align: center; }
+      .hero-catchcopy { font-size: 1.5rem; text-align: center; }
+      .hero-dots { justify-content: center; }
+      .hero-tree { width: 200px; margin: 0 auto; }
+      .hero-right { padding: 10px; }
+      .hero-right img { width: 100%; max-width: 400px; border-radius: 2rem; }
+      .hero-cta { margin-top: -20px; padding-bottom: 24px; }
+      .hero-grass { height: 110px; }
+
+      .sec { padding: 56px 16px 64px; }
+      .sec-title { font-size: 1.35rem; }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .event-extra { grid-template-columns: 1fr; }
+      .contact-cards { grid-template-columns: 1fr; }
+      .supporter-grid { grid-template-columns: 1fr; }
+      .access-grid { grid-template-columns: 1fr; }
+      .price-grid { grid-template-columns: 1fr 1fr; }
+      .guide-table th { width: 100px; font-size: 0.78rem; padding: 10px; }
+      .guide-table td { font-size: 0.78rem; padding: 10px; }
+    }
+
+    @media (max-width: 480px) {
+      .logo-area img { width: 38px; }
+      .logo-text .name { font-size: 1rem; }
+      .hero-catchcopy { font-size: 1.3rem; }
+      .hero-tree { width: 160px; }
+      .hero-grass { height: 80px; }
+
+      .feature-grid { grid-template-columns: 1fr 1fr; }
+      .feature-card { padding: 20px 10px 16px; }
+      .feature-icon { width: 48px; height: 48px; font-size: 1.3rem; }
+      .feature-card h3 { font-size: 0.78rem; }
+      .feature-card p { font-size: 0.7rem; }
+      .price-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== ヘッダー ========== -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="#" class="logo-area">
+          <img src="logo-yata.png.JPG" alt="遊ぶ楽校やた ロゴ">
+          <div class="logo-text">
+            <span class="name">遊ぶ楽校やた</span>
+            <span class="tagline">自然の中で、遊びながら育つ。</span>
+          </div>
+        </a>
+        <a href="#contact" class="header-contact-btn">お問い合わせ</a>
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="#" class="active">ホーム</a></li>
+          <li><a href="#about">遊ぶ楽校やたについて</a></li>
+          <li><a href="#activity">活動のようす</a></li>
+          <li><a href="#guide">利用案内</a></li>
+          <li><a href="#staff">スタッフ紹介</a></li>
+          <li><a href="#supporter">サポーター募集</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== ヒーロー（2カラム） ========== -->
+  <section id="home" class="hero">
+    <!-- 空の装飾（元Next.jsデザインのSVGをそのまま移植） -->
+    <div class="hero-sky-decor">
+      <!-- 雲1 -->
+      <svg viewBox="0 0 200 100" fill="none" style="position:absolute;left:-4%;top:32px;width:224px;">
+        <ellipse cx="60" cy="65" rx="55" ry="30" fill="white" fill-opacity="0.9"/><ellipse cx="120" cy="60" rx="65" ry="35" fill="white" fill-opacity="0.9"/><ellipse cx="150" cy="70" rx="40" ry="24" fill="white" fill-opacity="0.9"/><ellipse cx="85" cy="45" rx="42" ry="28" fill="white"/><ellipse cx="130" cy="42" rx="38" ry="26" fill="white"/>
+      </svg>
+      <!-- 雲2 -->
+      <svg viewBox="0 0 200 100" fill="none" style="position:absolute;left:20%;top:8px;width:144px;opacity:0.9;">
+        <ellipse cx="60" cy="65" rx="55" ry="30" fill="white" fill-opacity="0.9"/><ellipse cx="120" cy="60" rx="65" ry="35" fill="white" fill-opacity="0.9"/><ellipse cx="150" cy="70" rx="40" ry="24" fill="white" fill-opacity="0.9"/><ellipse cx="85" cy="45" rx="42" ry="28" fill="white"/><ellipse cx="130" cy="42" rx="38" ry="26" fill="white"/>
+      </svg>
+      <!-- 雲3 -->
+      <svg viewBox="0 0 200 100" fill="none" style="position:absolute;left:55%;top:48px;width:192px;">
+        <ellipse cx="60" cy="65" rx="55" ry="30" fill="white" fill-opacity="0.9"/><ellipse cx="120" cy="60" rx="65" ry="35" fill="white" fill-opacity="0.9"/><ellipse cx="150" cy="70" rx="40" ry="24" fill="white" fill-opacity="0.9"/><ellipse cx="85" cy="45" rx="42" ry="28" fill="white"/><ellipse cx="130" cy="42" rx="38" ry="26" fill="white"/>
+      </svg>
+      <!-- 雲4 -->
+      <svg viewBox="0 0 200 100" fill="none" style="position:absolute;left:75%;top:-8px;width:128px;opacity:0.85;">
+        <ellipse cx="60" cy="65" rx="55" ry="30" fill="white" fill-opacity="0.9"/><ellipse cx="120" cy="60" rx="65" ry="35" fill="white" fill-opacity="0.9"/><ellipse cx="150" cy="70" rx="40" ry="24" fill="white" fill-opacity="0.9"/><ellipse cx="85" cy="45" rx="42" ry="28" fill="white"/><ellipse cx="130" cy="42" rx="38" ry="26" fill="white"/>
+      </svg>
+      <!-- 雲5 -->
+      <svg viewBox="0 0 200 100" fill="none" style="position:absolute;left:38%;top:112px;width:96px;opacity:0.8;">
+        <ellipse cx="60" cy="65" rx="55" ry="30" fill="white" fill-opacity="0.9"/><ellipse cx="120" cy="60" rx="65" ry="35" fill="white" fill-opacity="0.9"/><ellipse cx="150" cy="70" rx="40" ry="24" fill="white" fill-opacity="0.9"/><ellipse cx="85" cy="45" rx="42" ry="28" fill="white"/><ellipse cx="130" cy="42" rx="38" ry="26" fill="white"/>
+      </svg>
+      <!-- 白い鳥 -->
+      <svg viewBox="0 0 32 20" fill="none" style="position:absolute;left:8%;top:80px;width:40px;">
+        <path d="M1 13 C 6 4, 11 4, 16 11 C 21 4, 26 4, 31 13" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <!-- 紙飛行機 -->
+      <svg viewBox="0 0 140 60" fill="none" style="position:absolute;right:10%;top:32px;width:128px;opacity:0.9;">
+        <path d="M4,30 Q40,26 74,20" stroke="white" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round" opacity="0.85"/>
+        <g transform="translate(78 16) rotate(-10)"><path d="M0,0 L34,7 L0,14 L8,7 Z" fill="white" opacity="0.95"/><path d="M0,0 L18,7 L0,14 Z" fill="white" opacity="0.7"/></g>
+      </svg>
+      <!-- 葉っぱ（緑） -->
+      <svg viewBox="0 0 40 40" fill="none" style="position:absolute;left:6%;bottom:96px;width:40px;transform:rotate(15deg);opacity:0.8;">
+        <path d="M8,32 C6,18 14,6 32,6 C32,22 22,32 8,32 Z" fill="#78b933"/><path d="M9,31 C16,22 22,16 31,7" stroke="white" stroke-opacity="0.5" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <!-- 葉っぱ（黄） -->
+      <svg viewBox="0 0 40 40" fill="none" style="position:absolute;right:6%;bottom:128px;width:36px;transform:rotate(-12deg);opacity:0.8;">
+        <path d="M8,32 C6,18 14,6 32,6 C32,22 22,32 8,32 Z" fill="#f0c040"/><path d="M9,31 C16,22 22,16 31,7" stroke="white" stroke-opacity="0.5" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- 2カラム -->
+    <div class="hero-grid">
+      <!-- 左：キャッチコピー＋ロゴの木 -->
+      <div class="hero-left">
+        <p class="hero-catchcopy">
+          ありのままの存在が光り輝く<br>
+          体験が生きる土台になる
+        </p>
+        <div class="hero-dots">
+          <span class="d-g"></span><span class="d-y"></span><span class="d-p"></span>
+          <span class="d-g"></span><span class="d-y"></span><span class="d-p"></span>
+          <span class="d-g"></span><span class="d-y"></span><span class="d-p"></span>
+          <span class="d-g"></span><span class="d-y"></span>
+        </div>
+        <div class="hero-tree">
+          <img src="logo-yata-transparent.png" alt="遊ぶ楽校やたの木">
+        </div>
+      </div>
+
+      <!-- 右：集合写真 -->
+      <div class="hero-right">
+        <img src="hero-photo.jpg" alt="遊ぶ楽校やたのなかまたち">
+      </div>
+    </div>
+
+    <!-- ボタン -->
+    <div class="hero-cta">
+      <a href="#trial">🌱 見学・体験はこちら ＞</a>
+    </div>
+
+    <!-- 芝生（元デザインのSVG） -->
+    <div class="hero-grass">
+      <svg viewBox="0 0 1400 220" preserveAspectRatio="none">
+        <path d="M0,70 C150,10 300,90 480,50 C660,10 800,80 980,45 C1160,10 1280,70 1400,40 L1400,220 L0,220 Z" fill="#92cd48"/>
+        <path d="M0,110 C180,60 320,120 500,90 C700,55 860,120 1040,90 C1200,65 1300,105 1400,85 L1400,220 L0,220 Z" fill="#5f9b28"/>
+        <g transform="translate(60 46)"><circle cx="-6" cy="0" r="3.4" fill="white"/><circle cx="6" cy="0" r="3.4" fill="white"/><circle cx="0" cy="-6" r="3.4" fill="white"/><circle cx="0" cy="6" r="3.4" fill="white"/><circle cx="0" cy="0" r="3.6" fill="#f0c040"/></g>
+        <g transform="translate(180 30)"><circle cx="-6" cy="0" r="3.4" fill="white"/><circle cx="6" cy="0" r="3.4" fill="white"/><circle cx="0" cy="-6" r="3.4" fill="white"/><circle cx="0" cy="6" r="3.4" fill="white"/><circle cx="0" cy="0" r="3.6" fill="#f0c040"/></g>
+        <g transform="translate(340 52)"><circle cx="-6" cy="0" r="3.4" fill="white"/><circle cx="6" cy="0" r="3.4" fill="white"/><circle cx="0" cy="-6" r="3.4" fill="white"/><circle cx="0" cy="6" r="3.4" fill="white"/><circle cx="0" cy="0" r="3.6" fill="#f0c040"/></g>
+        <g transform="translate(520 26)"><circle cx="-6" cy="0" r="3.4" fill="white"/><circle cx="6" cy="0" r="3.4" fill="white"/><circle cx="0" cy="-6" r="3.4" fill="white"/><circle cx="0" cy="6" r="3.4" fill="white"/><circle cx="0" cy="0" r="3.6" fill="#f0c040"/></g>
+        <g transform="translate(700 48)"><circle cx="-6" cy="0" r="3.4" fill="white"/><circle cx="6" cy="0" r="3.4" fill="white"/><circle cx="0" cy="-6" r="3.4" fill="white"/><circle cx="0" cy="6" r="3.4" fill="white"/><circle cx="0" cy="0" r="3.6" fill="#f0c040"/></g>
+        <g transform="translate(880 32)"><circle cx="-6" cy="0" r="3.4" fill="white"/><circle cx="6" cy="0" r="3.4" fill="white"/><circle cx="0" cy="-6" r="3.4" fill="white"/><circle cx="0" cy="6" r="3.4" fill="white"/><circle cx="0" cy="0" r="3.6" fill="#f0c040"/></g>
+        <g transform="translate(1040 50)"><circle cx="-6" cy="0" r="3.4" fill="white"/><circle cx="6" cy="0" r="3.4" fill="white"/><circle cx="0" cy="-6" r="3.4" fill="white"/><circle cx="0" cy="6" r="3.4" fill="white"/><circle cx="0" cy="0" r="3.6" fill="#f0c040"/></g>
+        <g transform="translate(1180 28)"><circle cx="-6" cy="0" r="3.4" fill="white"/><circle cx="6" cy="0" r="3.4" fill="white"/><circle cx="0" cy="-6" r="3.4" fill="white"/><circle cx="0" cy="6" r="3.4" fill="white"/><circle cx="0" cy="0" r="3.6" fill="#f0c040"/></g>
+        <g transform="translate(1320 46)"><circle cx="-6" cy="0" r="3.4" fill="white"/><circle cx="6" cy="0" r="3.4" fill="white"/><circle cx="0" cy="-6" r="3.4" fill="white"/><circle cx="0" cy="6" r="3.4" fill="white"/><circle cx="0" cy="0" r="3.6" fill="#f0c040"/></g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== 遊ぶ楽校やたについて（ポエム） ========== -->
+  <section id="about" class="sec bg-white">
+    <div class="sec-inner">
+      <span class="sec-label">ABOUT</span>
+      <h2 class="sec-title">遊ぶ楽校やたについて</h2>
+
+      <p class="about-poem">
+        ワクワク　ドキドキ<br>
+        子ども時代を、思いっきり子どもらしく過ごそう<br><br>
+        ありのまま　心のままに<br>
+        エネルギーを発散させ、枠や型にとらわれず<br>
+        豊かな発想で「今」を全力で生きる<br><br>
+        遊ぶ楽校やたは、そんな学校以外の学び場です。
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== 5つの特徴 ========== -->
+  <section class="sec bg-white">
+    <div class="sec-inner">
+      <!-- 1段目：3枚 -->
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-photo"><img src="photo-nature-v2.jpg" alt="自然の中で" style="object-position: center 30%;"></div>
+          <div class="feature-body">
+            <h3>自然の中で<br>のびのび</h3>
+            <p>野外活動や自然体験を通して、心と体を育みます。</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-photo"><img src="photo-manabi.jpg" alt="遊びが学びになる" style="object-position: center 30%;"></div>
+          <div class="feature-body">
+            <h3>遊びが<br>学びになる</h3>
+            <p>遊びや体験から学びが生まれ、生きる力を育てます。</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-photo"><img src="photo-hitori.jpg" alt="一人ひとりを大切に" style="object-position: center 60%;"></div>
+          <div class="feature-body">
+            <h3>一人ひとりを<br>大切に</h3>
+            <p>その子のペースを大切に、寄り添いながらサポートします。</p>
+          </div>
+        </div>
+      </div>
+      <!-- 2段目：2枚（中央寄せ） -->
+      <div class="feature-grid" style="max-width: 680px; margin: 18px auto 0; grid-template-columns: repeat(2, 1fr);">
+        <div class="feature-card">
+          <div class="feature-photo"><img src="photo-anshin.jpg" alt="安心できる居場所" style="object-position: center 35%;"></div>
+          <div class="feature-body">
+            <h3>安心できる<br>居場所</h3>
+            <p>ありのままの自分でいられる、あたたかい場所です。</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-photo"><img src="photo-tsunagari.jpg" alt="つながりを大切に" style="object-position: center 45%;"></div>
+          <div class="feature-body">
+            <h3>つながりを<br>大切に</h3>
+            <p>子ども同士、家族、地域とのつながりを大切にしています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 理念 ========== -->
+  <section id="philosophy" class="sec bg-cream">
+    <div class="sec-inner">
+      <span class="sec-label">PHILOSOPHY</span>
+      <h2 class="sec-title">遊ぶ楽校やたの理念</h2>
+      <div class="philosophy-cards">
+        <div class="philosophy-card">
+          <p>子ども一人ひとりの<br>ありのままの存在、<br>個性を光輝かせる</p>
+        </div>
+        <div class="philosophy-card">
+          <p>子ども自身が本来持っている<br>力を最大限に生かせるよう<br>サポートし、環境を創る</p>
+        </div>
+        <div class="philosophy-card">
+          <p>親御さんと想いや情報を<br>交換し、<br>共に学び、共に歩む</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 活動のようす ========== -->
+  <section id="activity" class="sec bg-green">
+    <div class="sec-inner">
+      <span class="sec-label">ACTIVITIES</span>
+      <h2 class="sec-title">活動のようす</h2>
+      <p class="sec-desc">
+        曜日ごとにテーマを分けて、<br>
+        「知能」「感性」「身体」をバランスよく育む活動を行っています。
+      </p>
+      <div class="day-grid">
+        <div class="day-card">
+          <div class="day-photo"><img src="photo-mon.jpg" alt="月曜日の活動" style="object-position: center 40%;"></div>
+          <div class="day-body">
+            <span class="day-label day-mon">月曜日</span>
+            <h3>知能の育ち</h3>
+            <ul>
+              <li>子ども新聞から時事問題を学ぶ</li>
+              <li>教科学習（国語・算数・社会）</li>
+              <li>お金の楽習</li>
+              <li>行事の事前・事後楽習</li>
+            </ul>
+          </div>
+        </div>
+        <div class="day-card">
+          <div class="day-photo"><img src="photo-tue.jpg" alt="火曜日の活動" style="object-position: center 60%;"></div>
+          <div class="day-body">
+            <span class="day-label day-tue">火曜日</span>
+            <h3>感性の育ち</h3>
+            <ul>
+              <li>食の楽習（調理して、みんなでお昼ごはん）</li>
+              <li>EQ 感情学習</li>
+              <li>ものづくり（絵画・縫い物・図工）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="day-card">
+          <div class="day-photo"><img src="photo-thu.jpg" alt="木曜日の活動" style="object-position: center 55%;"></div>
+          <div class="day-body">
+            <span class="day-label day-thu">木曜日</span>
+            <h3>身体の育ち</h3>
+            <ul>
+              <li>野外活動、自然楽習で体づくり</li>
+              <li>磯遊び、川遊び、公園遊び</li>
+              <li>火起こし・体育館でスポーツ</li>
+              <li>畑楽習・散歩・体力づくり</li>
+              <li>羽釜でごはんを炊いて食べる</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="event-extra">
+        <div class="event-mini">
+          <div class="event-photo"><img src="photo-yatashokudo-v2.jpg" alt="やた食堂" style="object-position: center 50%;"></div>
+          <div class="event-body">
+            <h4>やた食堂</h4>
+            <p>みんなで作ってみんなで食べる</p>
+          </div>
+        </div>
+        <div class="event-mini">
+          <div class="event-photo"><img src="photo-kigyo.jpg" alt="企業訪問" style="object-position: center 40%;"></div>
+          <div class="event-body">
+            <h4>企業訪問</h4>
+            <p>社会とつながる体験学習</p>
+          </div>
+        </div>
+        <div class="event-mini">
+          <div class="event-photo"><img src="photo-marche.jpg" alt="マルシェ出店" style="object-position: center 40%;"></div>
+          <div class="event-body">
+            <h4>マルシェ出店</h4>
+            <p>自分たちで考えてお店を出す体験</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 利用案内 ========== -->
+  <section id="guide" class="sec bg-cream">
+    <div class="sec-inner">
+      <span class="sec-label">GUIDE</span>
+      <h2 class="sec-title">利用案内</h2>
+      <table class="guide-table">
+        <tr><th>対象</th><td>小学生・中学生</td></tr>
+        <tr><th>日時</th><td>月曜日・火曜日・木曜日　10:00〜15:15</td></tr>
+        <tr>
+          <th>場所</th>
+          <td>
+            <strong>月・火曜日：</strong>ZATTA ZISSE（ザッタジッセ）<br>
+            北九州市門司区東港町4-68<br><br>
+            <strong>木曜日：</strong>大積公民館<br>
+            北九州市門司区大積725-29
+          </td>
+        </tr>
+        <tr><th>見学・体験</th><td>随時受付中！ 体験は1回目無料、2・3回目は1,000円</td></tr>
+      </table>
+
+      <h3 id="trial" style="font-size:1.05rem; color:#3a6528; font-weight:700; margin-top:40px; margin-bottom:16px;">利用料金</h3>
+
+      <div class="price-grid">
+        <div class="price-card">
+          <p class="plan">1day 単発</p>
+          <p class="price">3,000円</p>
+        </div>
+        <div class="price-card">
+          <p class="plan">週1コース</p>
+          <p class="price">11,000円<span style="font-size:0.72rem;color:#999">/月</span></p>
+          <p class="note">月4回</p>
+        </div>
+        <div class="price-card">
+          <p class="plan">週2コース</p>
+          <p class="price">21,000円<span style="font-size:0.72rem;color:#999">/月</span></p>
+          <p class="note">月8回</p>
+        </div>
+        <div class="price-card">
+          <p class="plan">週3コース</p>
+          <p class="price">30,000円<span style="font-size:0.72rem;color:#999">/月</span></p>
+          <p class="note">月12回</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== スタッフ紹介 ========== -->
+  <section id="staff" class="sec bg-green">
+    <div class="sec-inner">
+      <span class="sec-label">STAFF</span>
+      <h2 class="sec-title">スタッフ紹介</h2>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <div class="staff-avatar">
+            <img src="staff-mikki-v3.jpg" alt="みっきー" style="object-position: center 20%;">
+          </div>
+          <p class="staff-name">みっきー（寺田美貴）</p>
+          <p class="staff-role">楽長</p>
+          <p class="staff-msg">教師10年。子どもたちと本気で遊ぶ、笑う、話す、体験する。「ありのままの存在を愛で満たして生きていく」がテーマ。</p>
+        </div>
+        <div class="staff-card">
+          <div class="staff-avatar">
+            <img src="staff-chie.jpg" alt="ちえちゃん" style="object-position: center 25%;">
+          </div>
+          <p class="staff-name">ちえちゃん</p>
+          <p class="staff-role">月曜日担当</p>
+          <p class="staff-msg">保育士、3児の母。我が子の不登校をきっかけにやたと出会いました。一緒に楽しく学びましょう。</p>
+        </div>
+        <div class="staff-card">
+          <div class="staff-avatar" style="background:#e8f5ed; display:flex; align-items:center; justify-content:center; font-size:2rem;">💗</div>
+          <p class="staff-name">まりちゃん（山之内真理）</p>
+          <p class="staff-role">火曜日担当・EQ感情学習</p>
+          <p class="staff-msg">SELファシリテーター。自分が何をしている時に心が躍るのか、自分探しの旅を子どもたちと一緒に。</p>
+        </div>
+        <div class="staff-card">
+          <div class="staff-avatar">
+            <img src="staff-ikutyan.jpg" alt="いくちゃん" style="object-position: center 20%;">
+          </div>
+          <p class="staff-name">いくちゃん（藤井生衣）</p>
+          <p class="staff-role">お金の楽習担当</p>
+          <p class="staff-msg">ファイナンシャルプランナー。愛と感謝をもってお金と向き合う大切さを、一緒に経験しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== サポーター募集 ========== -->
+  <section id="supporter" class="sec bg-cream">
+    <div class="sec-inner">
+      <span class="sec-label">SUPPORTER</span>
+      <h2 class="sec-title">サポーターさん募集</h2>
+      <div class="supporter-message">
+        <p class="em">子どもたちの今を応援する 〜心身の健康と成長のために〜</p>
+        <br>
+        <p>
+          何らかの理由で学校に行けなかったり、行かないことを選択した子どもたちには、
+          実体験や人との関わりを育む場所が必要です。
+        </p>
+        <p>
+          小学生・中学生は社会性や自己形成の基盤がつくられる大切な時期。
+          すべての子どもに学ぶ環境は保障されるべきであり、フリースクールはその大切な選択肢のひとつです。
+        </p>
+        <br>
+        <p>
+          <span class="em">皆さまのご支援は、子どもたちの無限の可能性を応援します。</span><br>
+          ありのままの自分を愛され、認められながら育つことが、
+          やがて社会の一員として自分らしく生きていける力へとつながっていきます。
+        </p>
+      </div>
+      <div class="supporter-grid">
+        <div class="supporter-card">
+          <h3>個人サポーター</h3>
+          <p class="s-price">1,000円/月</p>
+          <p class="s-note">年額 12,000円</p>
+        </div>
+        <div class="supporter-card">
+          <h3>企業サポーター</h3>
+          <p class="s-price">10,000円/月</p>
+          <p class="s-note">年額 120,000円</p>
+        </div>
+        <div class="supporter-card">
+          <h3>単発サポーター</h3>
+          <p class="s-price">金額自由</p>
+          <p class="s-note">都合のよいタイミングで</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== よくある質問 ========== -->
+  <section id="faq" class="sec bg-white">
+    <div class="sec-inner">
+      <span class="sec-label">FAQ</span>
+      <h2 class="sec-title">よくある質問</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>見学や体験はできますか？</summary>
+          <p class="faq-answer">はい、随時受付しています。体験は1回目無料、2・3回目は1,000円です。お気軽にお問い合わせください。</p>
+        </details>
+        <details class="faq-item">
+          <summary>対象年齢を教えてください。</summary>
+          <p class="faq-answer">小学生・中学生が対象です。</p>
+        </details>
+        <details class="faq-item">
+          <summary>どんな子が通っていますか？</summary>
+          <p class="faq-answer">好きなことを伸ばしたい子、いろいろな体験をしたい子、今の学校に違和感を感じている子、思いっきり遊びたい子など、さまざまです。</p>
+        </details>
+        <details class="faq-item">
+          <summary>週に何回通えますか？</summary>
+          <p class="faq-answer">週1回（月4回）、週2回（月8回）、週3回（月12回）のコースがあります。1day単発の利用も可能です。</p>
+        </details>
+        <details class="faq-item">
+          <summary>活動日と時間を教えてください。</summary>
+          <p class="faq-answer">月曜日・火曜日・木曜日の 10:00〜15:15 です。</p>
+        </details>
+        <details class="faq-item">
+          <summary>大人向けのイベントはありますか？</summary>
+          <p class="faq-answer">月1回「ゆるゆる茶話会」を開催しています。EQワークショップや進路説明会も不定期で行っています。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== アクセス ========== -->
+  <section id="access" class="sec bg-green">
+    <div class="sec-inner">
+      <span class="sec-label">ACCESS</span>
+      <h2 class="sec-title">アクセス</h2>
+      <div class="access-grid">
+        <div class="access-card">
+          <span class="access-day day-mon">月・火曜日</span>
+          <h3>ZATTA ZISSE（ザッタジッセ）</h3>
+          <p>北九州市門司区東港町4-68</p>
+        </div>
+        <div class="access-card">
+          <span class="access-day day-thu">木曜日</span>
+          <h3>大積公民館</h3>
+          <p>北九州市門司区大積725-29</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== お問い合わせ ========== -->
+  <section id="contact" class="sec contact-bg">
+    <div class="sec-inner">
+      <span class="sec-label">CONTACT</span>
+      <h2 class="sec-title">お問い合わせ</h2>
+      <p class="contact-desc">
+        見学・体験のお申し込みやご質問など、<br>
+        お気軽にご連絡ください。
+      </p>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="c-icon">✉️</div>
+          <p class="c-label">メール</p>
+          <p class="c-value">info@asobu-gakkou-yata.jp</p>
+        </div>
+        <div class="contact-card">
+          <div class="c-icon">💬</div>
+          <p class="c-label">公式LINE</p>
+          <p class="c-value">LINEでお問い合わせ</p>
+        </div>
+        <div class="contact-card">
+          <div class="c-icon">📷</div>
+          <p class="c-label">Instagram</p>
+          <p class="c-value">@asobu_gakkou_yata</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== フッター ========== -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">ホーム</a>
+      <a href="#about">やたについて</a>
+      <a href="#activity">活動のようす</a>
+      <a href="#guide">利用案内</a>
+      <a href="#supporter">サポーター募集</a>
+      <a href="#contact">お問い合わせ</a>
+    </div>
+    <p>&copy; 一般社団法人 遊ぶ楽校やた</p>
+  </footer>
+
+</body>
+</html>

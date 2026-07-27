@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e3efd9"/>
+      <stop offset="100%" stop-color="#fbf5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="600" y="300" font-size="120" text-anchor="middle" dominant-baseline="middle">🌳</text>
+  <text x="600" y="410" font-size="64" font-family="sans-serif" font-weight="900" fill="#6b4226" text-anchor="middle">遊ぶ楽校やた</text>
+  <text x="600" y="470" font-size="30" font-family="sans-serif" fill="#8b5e3c" text-anchor="middle">自然の中で、遊びながら育つ。</text>
+</svg>

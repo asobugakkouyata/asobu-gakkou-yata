@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#F2B84B"/>
+  <circle cx="200" cy="160" r="90" fill="rgba(255,255,255,0.18)"/>
+  <text x="200" y="195" font-size="90" text-anchor="middle" dominant-baseline="middle">🔥</text>
+  <text x="200" y="330" font-size="26" font-family="sans-serif" font-weight="bold" fill="#ffffff" text-anchor="middle">たき火</text>
+  <text x="200" y="365" font-size="15" font-family="sans-serif" fill="rgba(255,255,255,0.75)" text-anchor="middle">仮画像 / Photo 3</text>
+</svg>
