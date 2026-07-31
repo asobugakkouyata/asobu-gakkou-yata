@@ -133,32 +133,40 @@
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 40% 60%;
+      grid-template-columns: 55% 45%;
       align-items: center;
-      padding: 50px 36px 0;
-      min-height: 460px;
+      padding: 64px 36px 0;
+      min-height: 580px;
     }
 
-    /* 左カラム */
+    /* 左カラム：テキスト */
     .hero-left {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
 
-    .hero-catchcopy {
-      font-size: 2rem;
+    .hero-title {
+      font-size: 2.6rem;
       font-weight: 700;
       color: #5a4a2a;
       line-height: 1.6;
-      letter-spacing: 0.04em;
-      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+      margin-bottom: 0;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #5a4a2a;
+      margin-bottom: 10px;
     }
 
     .hero-dots {
       display: flex;
       gap: 6px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .hero-dots span {
       width: 7px; height: 7px;
@@ -169,65 +177,70 @@
     .hero-dots .d-y { background: #f0c040; }
     .hero-dots .d-p { background: #e8a0b0; }
 
+    .hero-desc {
+      font-size: 0.92rem;
+      color: #5a4a2a;
+      line-height: 2.2;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 13px 26px;
+      border-radius: 50px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    .hero-btn-primary {
+      background: #5f9b28;
+      color: #fff;
+    }
+
+    .hero-btn-secondary {
+      background: #fff;
+      color: #5f9b28;
+      border: 2px solid #5f9b28;
+    }
+
+    /* 右カラム：ロゴの木 */
     .hero-tree {
-      width: 280px;
-      margin: 0 auto 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
       z-index: 5;
     }
 
     .hero-tree img {
       width: 100%;
-      height: auto;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 18px;
       display: block;
     }
 
-    /* 右カラム */
-    .hero-right {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .hero-right img {
-      width: 90%;
-      max-width: 500px;
+    .hero-left-tree {
+      width: 220px;
       height: auto;
-      border-radius: 2rem;
-      box-shadow: 0 22px 50px -20px rgba(107,66,38,0.45);
-      ring: 4px solid white;
-      outline: 4px solid white;
       display: block;
-    }
-
-    /* ボタン（芝生の上・中央） */
-    .hero-cta {
-      position: relative;
-      z-index: 20;
-      text-align: center;
-      padding: 0 20px 30px;
-      margin-top: -20px;
-    }
-
-    .hero-cta a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      color: #5f9b28;
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 16px 40px;
-      border-radius: 50px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.04em;
-    }
-
-    .hero-cta a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      align-self: center;
+      margin: 28px 0 20px;
     }
 
     /* 芝生（元デザインのGrassHill SVG） */
@@ -923,12 +936,11 @@
 
       .hero-grid { grid-template-columns: 1fr; padding: 36px 20px 0; min-height: auto; }
       .hero-left { align-items: center; text-align: center; }
-      .hero-catchcopy { font-size: 1.5rem; text-align: center; }
-      .hero-dots { justify-content: center; }
-      .hero-tree { width: 200px; margin: 0 auto; }
-      .hero-right { padding: 10px; }
-      .hero-right img { width: 100%; max-width: 400px; border-radius: 2rem; }
-      .hero-cta { margin-top: -20px; padding-bottom: 24px; }
+      .hero-title { font-size: 1.8rem; }
+      .hero-buttons { justify-content: center; }
+      .hero-tree { margin-top: 20px; }
+      .hero-tree img { height: 280px; }
+      .hero-left-tree { width: 160px; }
       .hero-grass { height: 110px; }
 
       .sec { padding: 56px 16px 64px; }
@@ -946,8 +958,10 @@
     @media (max-width: 480px) {
       .logo-area img { width: 38px; }
       .logo-text .name { font-size: 1rem; }
-      .hero-catchcopy { font-size: 1.3rem; }
-      .hero-tree { width: 160px; }
+      .hero-title { font-size: 1.5rem; }
+      .hero-tree img { height: 220px; }
+      .hero-left-tree { width: 140px; }
+      .hero-buttons { flex-direction: column; align-items: center; }
       .hero-grass { height: 80px; }
 
       .feature-grid { grid-template-columns: 1fr 1fr; }
@@ -1033,32 +1047,20 @@
 
     <!-- 2カラム -->
     <div class="hero-grid">
-      <!-- 左：キャッチコピー＋ロゴの木 -->
+      <!-- 左：キャッチコピー＋木＋ボタン -->
       <div class="hero-left">
-        <p class="hero-catchcopy">
-          ありのままの存在が光り輝く<br>
-          体験が生きる土台になる
-        </p>
-        <div class="hero-dots">
-          <span class="d-g"></span><span class="d-y"></span><span class="d-p"></span>
-          <span class="d-g"></span><span class="d-y"></span><span class="d-p"></span>
-          <span class="d-g"></span><span class="d-y"></span><span class="d-p"></span>
-          <span class="d-g"></span><span class="d-y"></span>
-        </div>
-        <div class="hero-tree">
-          <img src="logo-yata-transparent.png" alt="遊ぶ楽校やたの木">
+        <h1 class="hero-title">ありのままの存在が光り輝く<br>体験が生きる土台になる</h1>
+        <img class="hero-left-tree" src="logo-yata-transparent.png" alt="遊ぶ楽校やたの木">
+        <div class="hero-buttons">
+          <a href="#about" class="hero-btn hero-btn-primary">🌱 遊ぶ楽校やたについて ＞</a>
+          <a href="#trial" class="hero-btn hero-btn-secondary">🌱 見学・体験について ＞</a>
         </div>
       </div>
 
-      <!-- 右：集合写真 -->
-      <div class="hero-right">
-        <img src="hero-photo.jpg" alt="遊ぶ楽校やたのなかまたち">
+      <!-- 右：活動写真 -->
+      <div class="hero-tree">
+        <img src="hero-photo.jpg" alt="遊ぶ楽校やたの活動" style="object-position: center 30%;">
       </div>
-    </div>
-
-    <!-- ボタン -->
-    <div class="hero-cta">
-      <a href="#trial">🌱 見学・体験はこちら ＞</a>
     </div>
 
     <!-- 芝生（元デザインのSVG） -->
