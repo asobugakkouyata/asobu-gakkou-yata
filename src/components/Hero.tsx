@@ -36,7 +36,7 @@ export default function Hero() {
           </h1>
           <p className="mt-3 text-lg font-bold text-wood-700 sm:text-xl">{heroCopy.subcopy}</p>
           <div className="dotted-divider mx-auto mt-5 w-32 md:mx-0" aria-hidden />
-          <p className="mt-6 leading-loose text-wood-700">{heroCopy.description}</p>
+          <p className="mt-6 whitespace-pre-line leading-loose text-wood-700">{heroCopy.description}</p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
             <PillButton href="#about" icon="🌱">
@@ -48,27 +48,14 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-5 sm:gap-6">
-          <div className="relative h-[260px] w-full max-w-sm sm:h-[300px] md:h-[340px]">
-            <Image
-              src="/hero-tree.png"
-              alt="遊ぶ楽校やたの木"
-              fill
-              className="object-contain object-bottom animate-sway"
-              priority
-            />
-          </div>
-          <figure className="w-full max-w-md">
-            <Image
-              src="/staff/team-photo.jpg"
-              alt="遊ぶ楽校やたのなかまたち"
-              width={893}
-              height={876}
-              className="h-auto w-full rounded-[2rem] object-cover shadow-[0_22px_50px_-20px_rgba(107,66,38,0.45)] ring-4 ring-white sm:rounded-[2.75rem]"
-              sizes="(max-width: 768px) 100vw, 28rem"
-              priority
-            />
-          </figure>
+        <div className="relative mx-auto h-[260px] w-full max-w-sm sm:h-[300px] md:h-[340px]">
+          <Image
+            src="/hero-tree.png"
+            alt="遊ぶ楽校やたの木"
+            fill
+            className="object-contain object-bottom"
+            priority
+          />
         </div>
       </div>
 
