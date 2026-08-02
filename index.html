@@ -114,8 +114,7 @@
     .hero {
       position: relative;
       overflow: hidden;
-      /* 元Next.jsの空グラデーション: from-sky-400 via-sky-200 to-sky-100 */
-      background: linear-gradient(to bottom, #5dc9ef, #bfe9fb, #e3f6fd);
+      background: url('hero-bg.png') center bottom / cover no-repeat;
     }
 
     /* 空の装飾（雲・鳥・紙飛行機・葉）レイヤー */
@@ -988,59 +987,6 @@
 
   <!-- ========== ヒーロー（2カラム） ========== -->
   <section id="home" class="hero">
-    <!-- 空の装飾（元Next.jsデザインのSVGをそのまま移植） -->
-    <div class="hero-sky-decor">
-      <!-- 雲1（左端・大きい） -->
-      <svg viewBox="0 0 240 100" fill="none" style="position:absolute;left:-3%;top:28px;width:260px;">
-        <ellipse cx="50" cy="68" rx="48" ry="26" fill="white" fill-opacity="0.92"/><ellipse cx="110" cy="58" rx="60" ry="34" fill="white" fill-opacity="0.9"/><ellipse cx="170" cy="65" rx="50" ry="28" fill="white" fill-opacity="0.88"/><ellipse cx="80" cy="42" rx="44" ry="30" fill="white"/><ellipse cx="140" cy="38" rx="48" ry="28" fill="white"/>
-      </svg>
-      <!-- 雲2（左上・小さい） -->
-      <svg viewBox="0 0 160 80" fill="none" style="position:absolute;left:18%;top:6px;width:120px;opacity:0.85;">
-        <ellipse cx="40" cy="50" rx="38" ry="22" fill="white" fill-opacity="0.9"/><ellipse cx="90" cy="45" rx="48" ry="26" fill="white" fill-opacity="0.88"/><ellipse cx="65" cy="32" rx="34" ry="22" fill="white"/>
-      </svg>
-      <!-- 雲3（中央上・中くらい） -->
-      <svg viewBox="0 0 200 90" fill="none" style="position:absolute;left:36%;top:16px;width:160px;opacity:0.9;">
-        <ellipse cx="55" cy="58" rx="50" ry="26" fill="white" fill-opacity="0.9"/><ellipse cx="110" cy="52" rx="56" ry="30" fill="white" fill-opacity="0.88"/><ellipse cx="155" cy="60" rx="40" ry="22" fill="white" fill-opacity="0.86"/><ellipse cx="85" cy="36" rx="40" ry="24" fill="white"/>
-      </svg>
-      <!-- 雲4（右上・大きい） -->
-      <svg viewBox="0 0 260 110" fill="none" style="position:absolute;left:58%;top:36px;width:240px;">
-        <ellipse cx="60" cy="72" rx="55" ry="30" fill="white" fill-opacity="0.9"/><ellipse cx="130" cy="62" rx="68" ry="38" fill="white" fill-opacity="0.88"/><ellipse cx="200" cy="72" rx="52" ry="28" fill="white" fill-opacity="0.86"/><ellipse cx="95" cy="42" rx="48" ry="30" fill="white"/><ellipse cx="160" cy="38" rx="44" ry="28" fill="white"/>
-      </svg>
-      <!-- 雲5（右端・中くらい） -->
-      <svg viewBox="0 0 180 80" fill="none" style="position:absolute;left:80%;top:4px;width:140px;opacity:0.82;">
-        <ellipse cx="45" cy="52" rx="42" ry="24" fill="white" fill-opacity="0.9"/><ellipse cx="100" cy="46" rx="52" ry="28" fill="white" fill-opacity="0.88"/><ellipse cx="72" cy="32" rx="36" ry="22" fill="white"/>
-      </svg>
-      <!-- 雲6（中央下・小さい） -->
-      <svg viewBox="0 0 140 70" fill="none" style="position:absolute;left:42%;top:110px;width:90px;opacity:0.75;">
-        <ellipse cx="35" cy="45" rx="32" ry="18" fill="white" fill-opacity="0.88"/><ellipse cx="80" cy="40" rx="40" ry="22" fill="white" fill-opacity="0.85"/><ellipse cx="58" cy="28" rx="28" ry="18" fill="white"/>
-      </svg>
-      <!-- 白い鳥1（左上） -->
-      <svg viewBox="0 0 32 20" fill="none" style="position:absolute;left:8%;top:72px;width:36px;">
-        <path d="M1 13 C 6 4, 11 4, 16 11 C 21 4, 26 4, 31 13" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <!-- 白い鳥2（右上・小さい） -->
-      <svg viewBox="0 0 32 20" fill="none" style="position:absolute;right:18%;top:20px;width:26px;opacity:0.8;">
-        <path d="M1 13 C 6 5, 11 5, 16 12 C 21 5, 26 5, 31 13" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <!-- 白い鳥3（中央やや左・小さい） -->
-      <svg viewBox="0 0 32 20" fill="none" style="position:absolute;left:28%;top:48px;width:22px;opacity:0.7;">
-        <path d="M1 13 C 6 5, 11 5, 16 12 C 21 5, 26 5, 31 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <!-- 紙飛行機 -->
-      <svg viewBox="0 0 180 70" fill="none" style="position:absolute;right:8%;top:28px;width:150px;opacity:0.9;">
-        <path d="M4,40 Q30,36 60,30 T120,18" stroke="white" stroke-width="2" stroke-dasharray="1 8" stroke-linecap="round" opacity="0.8"/>
-        <g transform="translate(122 14) rotate(-12)"><path d="M0,0 L36,7 L0,14 L9,7 Z" fill="white" opacity="0.95"/><path d="M0,0 L20,7 L0,14 Z" fill="white" opacity="0.7"/></g>
-      </svg>
-      <!-- 葉っぱ（緑） -->
-      <svg viewBox="0 0 40 40" fill="none" style="position:absolute;left:6%;bottom:96px;width:40px;transform:rotate(15deg);opacity:0.8;">
-        <path d="M8,32 C6,18 14,6 32,6 C32,22 22,32 8,32 Z" fill="#78b933"/><path d="M9,31 C16,22 22,16 31,7" stroke="white" stroke-opacity="0.5" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
-      <!-- 葉っぱ（黄） -->
-      <svg viewBox="0 0 40 40" fill="none" style="position:absolute;right:6%;bottom:128px;width:36px;transform:rotate(-12deg);opacity:0.8;">
-        <path d="M8,32 C6,18 14,6 32,6 C32,22 22,32 8,32 Z" fill="#f0c040"/><path d="M9,31 C16,22 22,16 31,7" stroke="white" stroke-opacity="0.5" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
-    </div>
-
     <!-- 2カラム -->
     <div class="hero-grid">
       <!-- キャッチコピー＋木＋ボタン -->
@@ -1052,34 +998,6 @@
           <a href="#trial" class="hero-btn hero-btn-secondary">🌱 見学・体験について ＞</a>
         </div>
       </div>
-    </div>
-
-    <!-- 芝生（3層の丘＋白い小花） -->
-    <div class="hero-grass">
-      <svg viewBox="0 0 1400 220" preserveAspectRatio="none">
-        <!-- 奥の丘（明るい黄緑） -->
-        <path d="M0,80 C120,20 280,70 460,40 C640,10 780,65 960,35 C1140,5 1280,55 1400,30 L1400,220 L0,220 Z" fill="#a8d84a"/>
-        <!-- 中間の丘（中間緑） -->
-        <path d="M0,105 C160,50 300,100 500,75 C700,45 850,100 1050,75 C1220,52 1320,90 1400,70 L1400,220 L0,220 Z" fill="#7cb83a"/>
-        <!-- 手前の丘（濃い緑） -->
-        <path d="M0,140 C200,95 380,145 560,120 C740,95 900,140 1080,118 C1240,98 1340,130 1400,115 L1400,220 L0,220 Z" fill="#5a9a28"/>
-        <!-- 白い小花（白い花弁＋黄色い中心） -->
-        <g transform="translate(80 52)"><circle cx="-5" cy="0" r="2.8" fill="white"/><circle cx="5" cy="0" r="2.8" fill="white"/><circle cx="0" cy="-5" r="2.8" fill="white"/><circle cx="0" cy="5" r="2.8" fill="white"/><circle cx="3.5" cy="-3.5" r="2.8" fill="white"/><circle cx="0" cy="0" r="2.6" fill="#f0c040"/></g>
-        <g transform="translate(200 34)"><circle cx="-4" cy="0" r="2.2" fill="white"/><circle cx="4" cy="0" r="2.2" fill="white"/><circle cx="0" cy="-4" r="2.2" fill="white"/><circle cx="0" cy="4" r="2.2" fill="white"/><circle cx="2.8" cy="-2.8" r="2.2" fill="white"/><circle cx="0" cy="0" r="2" fill="#f0c040"/></g>
-        <g transform="translate(350 56)"><circle cx="-5" cy="0" r="2.8" fill="white"/><circle cx="5" cy="0" r="2.8" fill="white"/><circle cx="0" cy="-5" r="2.8" fill="white"/><circle cx="0" cy="5" r="2.8" fill="white"/><circle cx="-3.5" cy="-3.5" r="2.8" fill="white"/><circle cx="0" cy="0" r="2.6" fill="#f0c040"/></g>
-        <g transform="translate(490 28)"><circle cx="-4" cy="0" r="2.2" fill="white"/><circle cx="4" cy="0" r="2.2" fill="white"/><circle cx="0" cy="-4" r="2.2" fill="white"/><circle cx="0" cy="4" r="2.2" fill="white"/><circle cx="0" cy="0" r="2" fill="#f0c040"/></g>
-        <g transform="translate(620 48)"><circle cx="-5" cy="0" r="2.8" fill="white"/><circle cx="5" cy="0" r="2.8" fill="white"/><circle cx="0" cy="-5" r="2.8" fill="white"/><circle cx="0" cy="5" r="2.8" fill="white"/><circle cx="3.5" cy="3.5" r="2.8" fill="white"/><circle cx="0" cy="0" r="2.6" fill="#f0c040"/></g>
-        <g transform="translate(750 30)"><circle cx="-4" cy="0" r="2.2" fill="white"/><circle cx="4" cy="0" r="2.2" fill="white"/><circle cx="0" cy="-4" r="2.2" fill="white"/><circle cx="0" cy="4" r="2.2" fill="white"/><circle cx="-2.8" cy="2.8" r="2.2" fill="white"/><circle cx="0" cy="0" r="2" fill="#f0c040"/></g>
-        <g transform="translate(880 54)"><circle cx="-5" cy="0" r="2.8" fill="white"/><circle cx="5" cy="0" r="2.8" fill="white"/><circle cx="0" cy="-5" r="2.8" fill="white"/><circle cx="0" cy="5" r="2.8" fill="white"/><circle cx="3.5" cy="-3.5" r="2.8" fill="white"/><circle cx="0" cy="0" r="2.6" fill="#f0c040"/></g>
-        <g transform="translate(1000 32)"><circle cx="-4" cy="0" r="2.2" fill="white"/><circle cx="4" cy="0" r="2.2" fill="white"/><circle cx="0" cy="-4" r="2.2" fill="white"/><circle cx="0" cy="4" r="2.2" fill="white"/><circle cx="0" cy="0" r="2" fill="#f0c040"/></g>
-        <g transform="translate(1120 50)"><circle cx="-5" cy="0" r="2.8" fill="white"/><circle cx="5" cy="0" r="2.8" fill="white"/><circle cx="0" cy="-5" r="2.8" fill="white"/><circle cx="0" cy="5" r="2.8" fill="white"/><circle cx="-3.5" cy="-3.5" r="2.8" fill="white"/><circle cx="0" cy="0" r="2.6" fill="#f0c040"/></g>
-        <g transform="translate(1240 36)"><circle cx="-4" cy="0" r="2.2" fill="white"/><circle cx="4" cy="0" r="2.2" fill="white"/><circle cx="0" cy="-4" r="2.2" fill="white"/><circle cx="0" cy="4" r="2.2" fill="white"/><circle cx="2.8" cy="2.8" r="2.2" fill="white"/><circle cx="0" cy="0" r="2" fill="#f0c040"/></g>
-        <g transform="translate(1350 52)"><circle cx="-5" cy="0" r="2.8" fill="white"/><circle cx="5" cy="0" r="2.8" fill="white"/><circle cx="0" cy="-5" r="2.8" fill="white"/><circle cx="0" cy="5" r="2.8" fill="white"/><circle cx="0" cy="0" r="2.6" fill="#f0c040"/></g>
-        <g transform="translate(140 68)"><circle cx="-4" cy="0" r="2.2" fill="white"/><circle cx="4" cy="0" r="2.2" fill="white"/><circle cx="0" cy="-4" r="2.2" fill="white"/><circle cx="0" cy="4" r="2.2" fill="white"/><circle cx="0" cy="0" r="2" fill="#f0c040"/></g>
-        <g transform="translate(430 62)"><circle cx="-4" cy="0" r="2.2" fill="white"/><circle cx="4" cy="0" r="2.2" fill="white"/><circle cx="0" cy="-4" r="2.2" fill="white"/><circle cx="0" cy="4" r="2.2" fill="white"/><circle cx="2.8" cy="-2.8" r="2.2" fill="white"/><circle cx="0" cy="0" r="2" fill="#f0c040"/></g>
-        <g transform="translate(940 22)"><circle cx="-5" cy="0" r="2.8" fill="white"/><circle cx="5" cy="0" r="2.8" fill="white"/><circle cx="0" cy="-5" r="2.8" fill="white"/><circle cx="0" cy="5" r="2.8" fill="white"/><circle cx="-3.5" cy="3.5" r="2.8" fill="white"/><circle cx="0" cy="0" r="2.6" fill="#f0c040"/></g>
-        <g transform="translate(1080 70)"><circle cx="-4" cy="0" r="2.2" fill="white"/><circle cx="4" cy="0" r="2.2" fill="white"/><circle cx="0" cy="-4" r="2.2" fill="white"/><circle cx="0" cy="4" r="2.2" fill="white"/><circle cx="0" cy="0" r="2" fill="#f0c040"/></g>
-      </svg>
     </div>
   </section>
 
