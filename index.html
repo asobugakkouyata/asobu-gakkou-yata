@@ -166,12 +166,15 @@
     }
 
     .hero-title {
+      position: relative;
+      z-index: 6;
       font-size: 2.6rem;
       font-weight: 700;
       color: #5a4a2a;
       line-height: 1.6;
       letter-spacing: 0.06em;
       margin-bottom: 0;
+      white-space: nowrap;
       text-shadow: 0 1px 2px rgba(255,255,255,0.3);
     }
 
@@ -211,10 +214,10 @@
     }
 
     .hero-left-tree {
-      width: 242px;
+      width: 320px;
       height: auto;
       display: block;
-      margin: 24px 0 16px;
+      margin: -50px 0 16px;
       margin-left: -20px;
       position: relative;
       z-index: 5;
@@ -932,6 +935,11 @@
       .philosophy-card { width: 240px; height: 240px; padding: 28px 22px; }
       .philosophy-card p { font-size: 0.88rem; }
       .staff-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .hero-grid { flex-direction: column; padding: 40px 20px; min-height: auto; }
+      .hero-left { align-items: center; text-align: center; }
+      .hero-title { white-space: normal; }
+      .hero-photo { width: 100%; max-width: 420px; margin-top: 8px; }
     }
 
     @media (max-width: 700px) {
@@ -941,12 +949,9 @@
       .header-nav ul { gap: 2px; }
       .header-nav a { font-size: 0.7rem; padding: 3px 7px; }
 
-      .hero-grid { flex-direction: column; padding: 40px 20px; min-height: auto; }
-      .hero-left { align-items: center; text-align: center; }
       .hero-title { font-size: 1.8rem; }
       .hero-buttons { justify-content: center; }
       .hero-left-tree { width: 180px; }
-      .hero-photo { width: 100%; max-width: 420px; margin-top: 8px; }
       .hero-grass { height: 110px; }
 
       .sec { padding: 56px 16px 64px; }
