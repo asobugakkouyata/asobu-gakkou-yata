@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/decor/SectionHeading";
 import { weekdayPrograms, extraEvents, activitiesIntro } from "@/data/site";
@@ -39,13 +40,19 @@ export default function Activities() {
           ))}
         </div>
 
-        <div className="mt-6 grid gap-3.5 sm:grid-cols-3">
+        <div className="mt-6 grid gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
           {extraEvents.map((event, i) => (
             <Reveal key={event.title} delay={i * 100}>
-              <div className="h-full rounded-xl bg-white p-5 text-center shadow-sm">
-                <div className="text-2xl">{event.emoji}</div>
+              <div className="h-full overflow-hidden rounded-xl bg-white p-5 text-center shadow-sm">
+                {"image" in event && event.image ? (
+                  <div className="relative -mx-5 -mt-5 mb-2 aspect-[4/3] overflow-hidden">
+                    <Image src={event.image} alt={event.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, 25vw" />
+                  </div>
+                ) : (
+                  <div className="text-2xl">{event.emoji}</div>
+                )}
                 <h4 className="mt-1.5 text-sm font-bold text-wood-700">{event.title}</h4>
-                <p className="mt-1 text-xs text-wood-500">{event.description}</p>
+                <p className="mt-1 text-xs text-wood-500 text-pretty">{event.description}</p>
               </div>
             </Reveal>
           ))}

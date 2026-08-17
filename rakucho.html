@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>楽長の想い｜一般社団法人 遊ぶ楽校やた</title>
+  <meta name="description" content="子どもらしく自分らしく、思いっきりキラキラ輝く子ども時代を。遊ぶ楽校やた 楽長の想いをご紹介します。">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Yomogi&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Zen Maru Gothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      color: #4a4a4a;
+      line-height: 1.9;
+      background: #fffef8;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===========================
+       ヘッダー（トップページと共通）
+    =========================== */
+    .header {
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0 2px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-area img {
+      width: 48px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .logo-text .org {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 500;
+      color: #7aaa8e;
+      letter-spacing: 0.08em;
+      line-height: 1.2;
+    }
+
+    .logo-text .name {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #3d8b5e;
+      letter-spacing: 0.06em;
+      line-height: 1.3;
+    }
+
+    .header-contact-btn {
+      background: #4a9d6e;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 50px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .header-contact-btn:hover { background: #3d8b5e; }
+
+    .header-nav { padding: 4px 0 8px; }
+
+    .header-nav ul {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .header-nav a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #5a7a6a;
+      padding: 4px 10px;
+      border-radius: 14px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .header-nav a:hover {
+      background: #e8f5ed;
+      color: #3d8b5e;
+    }
+
+    /* ===========================
+       楽長の想い ページ本体
+    =========================== */
+    .rakucho-hero {
+      padding: 56px 20px 0;
+      text-align: center;
+    }
+
+    .rakucho-eyebrow {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 500;
+      color: #9aba9e;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .rakucho-hero h1 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: #3a6528;
+      letter-spacing: 0.06em;
+    }
+
+    .rakucho-photo-wrap {
+      max-width: 460px;
+      margin: 32px auto 0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.1);
+    }
+
+    .rakucho-photo-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .rakucho-message {
+      max-width: 640px;
+      margin: 40px auto 0;
+      padding: 0 20px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #333;
+      line-height: 2;
+      letter-spacing: 0.04em;
+    }
+
+    .rakucho-body {
+      max-width: 640px;
+      margin: 40px auto 0;
+      padding: 0 20px 80px;
+    }
+
+    .rakucho-body p {
+      font-size: 1.02rem;
+      color: #555;
+      line-height: 2.3;
+      margin-bottom: 1.6em;
+    }
+
+    .rakucho-body p:last-child { margin-bottom: 0; }
+
+    .rakucho-back {
+      text-align: center;
+      padding: 0 20px 80px;
+    }
+
+    .rakucho-back .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 13px 30px;
+      border-radius: 50px;
+      background: #fff;
+      color: #5f9b28;
+      border: 2px solid #5f9b28;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .rakucho-back .hero-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+
+    /* ===========================
+       フッター（トップページと共通）
+    =========================== */
+    footer {
+      background: #3d6b2e;
+      color: #c8e0b8;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.85rem;
+    }
+
+    footer .footer-links { margin-bottom: 10px; }
+
+    footer .footer-links a {
+      color: #d4ecc4;
+      margin: 0 10px;
+      font-size: 0.84rem;
+    }
+
+    footer .footer-links a:hover { color: #fff; }
+
+    /* ===========================
+       レスポンシブ
+    =========================== */
+    @media (max-width: 700px) {
+      .header-inner { padding: 0 16px; }
+      .header-top { flex-wrap: wrap; gap: 6px; }
+      .header-contact-btn { font-size: 0.78rem; padding: 8px 16px; }
+      .header-nav ul { gap: 2px; }
+      .header-nav a { font-size: 0.76rem; padding: 3px 7px; }
+
+      .rakucho-hero { padding: 44px 16px 0; }
+      .rakucho-hero h1 { font-size: 1.5rem; }
+      .rakucho-photo-wrap { max-width: 320px; margin-top: 26px; }
+      .rakucho-message { font-size: 1.05rem; margin-top: 30px; }
+      .rakucho-body { margin-top: 30px; }
+      .rakucho-body p { font-size: 0.96rem; line-height: 2.1; }
+    }
+
+    @media (max-width: 480px) {
+      .logo-area img { width: 38px; }
+      .logo-text .org { font-size: 0.54rem; }
+      .logo-text .name { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== ヘッダー ========== -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="index.html" class="logo-area">
+          <img src="logo-yata.png.JPG" alt="遊ぶ楽校やた ロゴ">
+          <div class="logo-text">
+            <span class="org">一般社団法人</span>
+            <span class="name">遊ぶ楽校やた</span>
+          </div>
+        </a>
+        <a href="index.html#contact" class="header-contact-btn">お問い合わせ</a>
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="index.html#about">遊ぶ楽校やたについて</a></li>
+          <li><a href="index.html#activity">活動のようす</a></li>
+          <li><a href="index.html#guide">利用案内</a></li>
+          <li><a href="index.html#staff">スタッフ紹介</a></li>
+          <li><a href="index.html#supporter">サポーターさん募集</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== 楽長の想い ========== -->
+  <main>
+    <div class="rakucho-hero">
+      <span class="rakucho-eyebrow">MESSAGE</span>
+      <h1>楽長の想い</h1>
+    </div>
+
+    <div class="rakucho-photo-wrap">
+      <img src="photo-rakucho.jpg" alt="楽長の想い">
+    </div>
+
+    <p class="rakucho-message">
+      子どもらしく自分らしく、<br>
+      思いっきりキラキラ輝く子ども時代を
+    </p>
+
+    <div class="rakucho-body">
+      <p>子どもは、無限大の可能性の種を持っていると思います。</p>
+      <p>その可能性の芽を伸ばし、自分らしい花を咲かせるのは、子ども自身ですが、そうなるための環境は大人がつくれるのではないかと思います。</p>
+      <p>私の場合、それが肌で感じる体験を積んでいくことです。子どもが枠や型に囚われず、自分の好きや好奇心、興味関心、そして違和感を大切に自分を育てる。</p>
+      <p>大人は、子どもが学び取り、芽を伸ばしていくための、太陽や水、空気、養分のような存在になれればと思っています。</p>
+      <p>心身ともに健やかに育ち、自分を信じて、将来社会の中で思いきり輝き、自分も周囲も喜ばせて貢献できる人になれれば、素敵だと思います。</p>
+      <p>そのために、同じく無限大の可能性を持つ大人の私たちが楽しく生き、子どもと遊び、体験する。そんな居場所、楽校にしたいと思っています。</p>
+    </div>
+
+    <div class="rakucho-back">
+      <a href="index.html" class="hero-btn">ホームへ戻る</a>
+    </div>
+  </main>
+
+  <!-- ========== フッター ========== -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">ホーム</a>
+      <a href="index.html#about">やたについて</a>
+      <a href="index.html#activity">活動のようす</a>
+      <a href="index.html#guide">利用案内</a>
+      <a href="index.html#supporter">サポーターさん募集</a>
+      <a href="index.html#contact">お問い合わせ</a>
+    </div>
+    <p>&copy; 一般社団法人 遊ぶ楽校やた</p>
+  </footer>
+
+</body>
+</html>

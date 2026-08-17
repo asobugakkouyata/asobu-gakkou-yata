@@ -25,7 +25,7 @@ export default function Access() {
                   {location.day}
                 </span>
                 <h3 className="mt-2.5 text-base font-bold text-wood-700">{location.name}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-wood-600">{location.address}</p>
+                <p className="mt-1 text-sm leading-relaxed text-wood-600 text-pretty">{location.address}</p>
               </div>
             </Reveal>
           ))}

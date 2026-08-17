@@ -18,7 +18,7 @@ export default function SectionHeading({
         <span className="text-sm font-bold tracking-wide text-grass-600">{eyebrow}</span>
       )}
       <h2
-        className={`mt-1 flex items-center gap-2 text-2xl font-black text-wood-700 sm:text-3xl ${
+        className={`mt-1 flex items-center gap-2 text-2xl font-black text-wood-700 text-balance sm:text-3xl ${
           isCenter ? "justify-center" : "justify-start"
         }`}
       >
@@ -36,7 +36,7 @@ export default function SectionHeading({
       />
       {description && (
         <p
-          className={`mt-5 leading-loose text-wood-600 ${
+          className={`mt-5 leading-loose text-wood-600 text-pretty ${
             isCenter ? "mx-auto max-w-2xl" : "max-w-2xl"
           }`}
         >

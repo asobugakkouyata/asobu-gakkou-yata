@@ -12,13 +12,13 @@ export default function Supporter() {
 
         <Reveal delay={80}>
           <div className="mt-12 rounded-2xl bg-white p-8 text-left shadow-sm">
-            <p className="text-lg font-bold leading-relaxed text-wood-700">{supporterMessage.emphasis}</p>
+            <p className="text-lg font-bold leading-relaxed text-wood-700 text-balance">{supporterMessage.emphasis}</p>
             <div className="mt-4 space-y-3 text-sm leading-loose text-wood-600">
               {supporterMessage.body.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph} className="text-pretty">{paragraph}</p>
               ))}
             </div>
-            <p className="mt-4 text-sm leading-loose text-wood-600">
+            <p className="mt-4 text-sm leading-loose text-wood-600 text-pretty">
               <span className="font-bold text-wood-700">{supporterMessage.closingEmphasis}</span>
               <br />
               {supporterMessage.closingBody}

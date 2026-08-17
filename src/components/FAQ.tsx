@@ -23,7 +23,7 @@ export default function FAQ() {
                     ＋
                   </span>
                 </summary>
-                <p className="py-0 pb-4 pl-[38px] text-sm leading-loose text-wood-500">{item.answer}</p>
+                <p className="py-0 pb-4 pl-[38px] text-sm leading-loose text-wood-500 text-pretty">{item.answer}</p>
               </details>
             </Reveal>
           ))}

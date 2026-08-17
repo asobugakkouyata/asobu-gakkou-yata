@@ -19,7 +19,7 @@ export default function Guide() {
                     <th className="w-28 whitespace-nowrap bg-[#f8f6ee] px-4 py-3.5 align-top text-sm font-bold text-grass-700 sm:w-32 sm:px-6">
                       {item.label}
                     </th>
-                    <td className="whitespace-pre-line px-4 py-3.5 text-sm leading-relaxed text-wood-600 sm:px-6">
+                    <td className="whitespace-pre-line px-4 py-3.5 text-sm leading-relaxed text-wood-600 text-pretty sm:px-6">
                       {item.value}
                     </td>
                   </tr>

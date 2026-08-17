@@ -17,7 +17,7 @@ export default function Philosophy() {
                 <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#e8f5ed] text-sm font-bold text-[#4a9d6e]">
                   {card.num}
                 </span>
-                <p className="text-sm leading-relaxed text-[#4a6840]">{card.text}</p>
+                <p className="text-sm leading-relaxed text-[#4a6840] text-pretty">{card.text}</p>
               </div>
             </Reveal>
           ))}
@@ -25,10 +25,10 @@ export default function Philosophy() {
 
         <Reveal delay={120}>
           <div className="mx-auto mt-9 max-w-2xl rounded-2xl bg-white p-8 text-center shadow-sm">
-            <p className="whitespace-pre-line text-lg font-bold leading-relaxed text-wood-700">
+            <p className="whitespace-pre-line text-lg font-bold leading-relaxed text-wood-700 text-balance">
               {philosophyMessage.emphasis}
             </p>
-            <p className="mt-4 text-sm leading-loose text-[#4a6840]">{philosophyMessage.body}</p>
+            <p className="mt-4 text-sm leading-loose text-[#4a6840] text-pretty">{philosophyMessage.body}</p>
           </div>
         </Reveal>
       </div>

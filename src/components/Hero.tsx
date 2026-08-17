@@ -31,12 +31,12 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl gap-6 px-4 pb-0 pt-14 sm:px-6 sm:pt-16 md:grid-cols-2 md:items-center md:gap-4">
         <div className="text-center md:text-left">
-          <h1 className="font-hand text-4xl leading-tight text-wood-700 drop-shadow-sm sm:text-5xl">
+          <h1 className="font-hand text-4xl leading-tight text-wood-700 text-balance drop-shadow-sm sm:text-5xl">
             {heroCopy.catchphrase}
           </h1>
-          <p className="mt-3 text-lg font-bold text-wood-700 sm:text-xl">{heroCopy.subcopy}</p>
+          <p className="mt-3 text-lg font-bold text-wood-700 text-balance sm:text-xl">{heroCopy.subcopy}</p>
           <div className="dotted-divider mx-auto mt-5 w-32 md:mx-0" aria-hidden />
-          <p className="mt-6 whitespace-pre-line leading-loose text-wood-700">{heroCopy.description}</p>
+          <p className="mt-6 whitespace-pre-line leading-loose text-wood-700 text-pretty">{heroCopy.description}</p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-start">
             <PillButton href="#about" icon="🌱">

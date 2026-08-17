@@ -20,7 +20,7 @@ export default function PillButton({
   className = "",
 }: PillButtonProps) {
   const base =
-    "inline-flex items-center gap-2.5 rounded-full px-6 py-3.5 text-base font-bold shadow-sm transition-transform hover:scale-105";
+    "inline-flex w-full items-center justify-center gap-2.5 whitespace-nowrap rounded-full px-5 py-3.5 text-[15px] font-bold shadow-sm transition-transform hover:scale-105 sm:w-auto sm:px-6 sm:text-base";
   const styles =
     variant === "primary"
       ? "bg-grass-600 text-white hover:bg-grass-700"

@@ -115,6 +115,12 @@ export const extraEvents = [
   { emoji: "🍽️", title: "やた食堂", description: "みんなで作ってみんなで食べる" },
   { emoji: "🏢", title: "企業訪問", description: "社会とつながる体験学習" },
   { emoji: "🛒", title: "マルシェ出店", description: "自分たちで考えてお店を出す体験" },
+  {
+    emoji: "☕",
+    title: "ゆるゆる茶話会",
+    description: "毎月第二金曜日開催。のんびりまったりお茶を飲んで話す会。どなた様でもお気軽にお越しください",
+    image: "/activities/chawakai.jpg",
+  },
 ] as const;
 
 export const guideItems = [

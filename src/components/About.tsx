@@ -20,7 +20,7 @@ export default function About() {
             <Reveal key={pillar.title} delay={i * 90} className="flex flex-col items-center text-center">
               <IconBadge icon={pillar.icon} tone={pillar.tone} />
               <h3 className="mt-4 text-sm font-bold text-wood-700 sm:text-base">{pillar.title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-wood-600 sm:text-sm">
+              <p className="mt-2 text-xs leading-relaxed text-wood-600 text-pretty sm:text-sm">
                 {pillar.description}
               </p>
             </Reveal>
@@ -58,7 +58,7 @@ export default function About() {
                 <Leaf className="pointer-events-none absolute right-6 top-7 w-6 rotate-12 opacity-70 sm:w-7" />
                 <Dandelion className="pointer-events-none absolute bottom-5 right-5 w-12 opacity-90 sm:right-9 sm:w-16" />
 
-                <p className="text-center font-hand text-2xl font-bold tracking-wide text-grass-600 sm:text-3xl">
+                <p className="text-center font-hand text-2xl font-bold tracking-wide text-grass-600 text-balance sm:text-3xl">
                   {yataMessage.heading}
                 </p>
                 <div className="mt-8 space-y-6 text-center font-hand text-lg leading-relaxed text-wood-700 sm:mt-10 sm:text-xl">

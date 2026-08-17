@@ -19,7 +19,7 @@ export default function Staff() {
                 </div>
                 <p className="mt-3 text-base font-bold text-grass-700">{staff.name}</p>
                 <p className="mt-0.5 text-xs font-medium text-grass-600">{staff.role}</p>
-                <p className="mt-2.5 text-left text-sm leading-relaxed text-wood-600">{staff.message}</p>
+                <p className="mt-2.5 text-left text-sm leading-relaxed text-wood-600 text-pretty">{staff.message}</p>
               </div>
             </Reveal>
           ))}
